@@ -1,0 +1,27 @@
+#include <iostream>
+#include<algorithm>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int f(int n){
+    if(1000>n){return n;}
+    else {f(n%1000);}
+}
+int main(){
+	int i,a,b;
+	long long n;
+	while(cin>>a>>b,a||b){
+        n = 1;
+        if(b==0){
+                n=a;
+                cout <<n<<endl;
+                continue;
+            }
+        for(i = 0; i < b; i++){
+            n *= a;
+            n = f(n);
+        }
+        cout << n <<endl;
+	}
+	return 0;
+}
